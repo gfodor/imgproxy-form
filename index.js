@@ -9,7 +9,7 @@ function hex2a(hexx) {
 
 function generateProxyUrl(opts) {
   var encoded_url = btoa(opts.url).replace(/=/g, "").replace(/\//g, '_').replace(/\+/g, '-')
-  var path = "/" + opts.resize + "/" + opts.width + "/" + opts.height + "/" +
+  var path = "/" + opts.method + "/" + opts.width + "/" + opts.height + "/" +
              opts.enlarge + "/" + opts.index + "/" + encoded_url + "." + opts.extension
   var shaObj = new jsSHA("SHA-256", "BYTES")
   shaObj.setHMACKey(opts.key, "HEX")
